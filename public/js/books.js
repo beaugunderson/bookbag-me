@@ -7,10 +7,10 @@ $(function () {
 
     books.BookLists[0].BookListEntries.forEach(function (book) {
       $('#bestsellers').append('<li>' +
-        '<span class="name"><a href="http://amzn.com/' + book.ASIN +
-          '?tag=bookbag-me-20">' + book.Title + '</a></span>, ' +
-        '<span class="author">' + book.Author + '</span>' +
-      '</li>');
+          '<span class="name"><a href="http://amzn.com/' + book.ASIN +
+            '?tag=bookbag-me-20">' + book.Title + '</a></span>, ' +
+          '<span class="author">' + book.Author + '</span>' +
+        '</li>');
     });
   });
 
@@ -20,11 +20,12 @@ $(function () {
 
     books.forEach(function (book) {
       $('#books').append('<li>' +
-        '<span class="name"><a href="' + book.link + '">' + book.name +
-          '</a></span>, ' +
-        '<span class="rating">' + book.rating + '</span>, ' +
-        '<span class="added">' + book['date-added'] + '</span>' +
-      '</li>');
+          '<span class="name"><a href="' + book.link + '">' + book.name +
+            '</a></span>, ' +
+          '<span class="rating">' + book.rating + '</span>, ' +
+          '<span class="added">' + book['date-added'].replace(/^A/, 'a') +
+            '</span>' +
+        '</li>');
     });
   });
 });
