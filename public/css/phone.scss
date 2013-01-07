@@ -1,0 +1,47 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e3ded7;
+  padding: 1em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+}
+
+footer {
+  margin-top: 2em;
+}
+
+h1 {
+  margin: 0;
+  margin-bottom: 1rem;
+
+  a {
+    color: #666;
+  }
+}
+
+a {
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    line-height: 1.5;
+    margin-bottom: 1.75em;
+  }
+}
+
+.rating {
+  font-style: italic;
+}
+
+.added {
+  color: #999;
+}

@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %}Signup{% endblock %}
+
+{% block head %}
+ <link href="https://fonts.googleapis.com/css?family=Raleway:900,600"
+  rel="stylesheet" type="text/css">
+
+ <link rel="stylesheet" href="/css/phone.css">
+
+ <script>
+  var wishlistId = '{{ wishlistId }}';
+ </script>
+
+ <script src="/js/books.js"></script>
+{% endblock %}
+
+{% block body %}
+ <h1><!-- <a href="{{ fsqCallback }}">&#9664; Back</a> -->Books from your
+  Wishlist</h1>
+
+ {% if !signedIn %}
+ <a href="/auth/foursquare">Sign in with Foursquare</a>
+ {% else %}
+ <p>
+  Get your wishlist ID from your wishlist URL on the <a
+  href="http://www.amazon.com/gp/registry/wishlist/">Amazon website</a>. For
+  example, the ID in this URL is <b>2Z2RCA0ENJA5Y</b>:
+ </p>
+
+ <pre>
+  <code>
+    http://www.amazon.com/gp/registry/wishlist/<b style="color: green;">2Z2RCA0ENJA5Y</b>/ref=topnav_lists_1
+  </code>
+ </pre>
+
+ <form action="/set-id" method="GET">
+  Your wishlist ID: <input type="text" name="wishlistId" id="wishlistId"> <input type="submit">
+ </form>
+ {% endif %}
+
+ <footer>
+  By <a href="http://www.beaugunderson.com/">Beau Gunderson</a>
+ </footer>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block title %}Your Books{% endblock %}
+
+{% block head %}
+ <script src="/lib/moment.js"></script>
+
+ <link href="https://fonts.googleapis.com/css?family=Raleway:900,600"
+  rel="stylesheet" type="text/css">
+
+ <link rel="stylesheet" href="/css/phone.css">
+
+ <script>
+  var wishlistId = '{{ user.wishlistId }}';
+ </script>
+
+ <script src="/js/books.js"></script>
+{% endblock %}
+
+{% block body %}
+ <h1>Books from your Wishlist</h1>
+
+ <ul id="books">
+  <li>Loading your books...</li>
+  <!-- Filled programatically -->
+ </ul>
+
+ <h1>Current Bestsellers</h1>
+
+ <span id="loading-bestsellers">Loading bestsellers...</span>
+
+ <ol id="bestsellers">
+  <!-- Filled programatically -->
+ </ol>
+{% endblock %}
