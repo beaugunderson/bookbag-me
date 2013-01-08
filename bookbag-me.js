@@ -110,21 +110,21 @@ app.get('/books/:userId', function (req, res) {
 });
 
 function isBookstore(categories) {
-  var books = false;
+  var bookstore = false;
 
   categories.forEach(function (category) {
     if (/book/i.test(category.name)) {
-      books = true;
+      bookstore = true;
     }
 
     category.parents.forEach(function (parent) {
       if (/book/i.test(parent)) {
-        books = true;
+        bookstore = true;
       }
     });
   });
 
-  return books;
+  return bookstore;
 }
 
 app.post('/push', function (req, res) {
@@ -140,7 +140,7 @@ app.post('/push', function (req, res) {
     if (!isBookstore(data.checkin.venue.categories)) {
       console.log(data.checkin.venue.name, 'was not a bookstore');
 
-      return res.render('index');
+      return res.send(200);
     }
 
     users.getUser(data.user.id, function (err, user) {
@@ -173,7 +173,7 @@ app.post('/push', function (req, res) {
     });
   }
 
-  res.render('index');
+  res.send(200);
 });
 
 // We want exceptions and stracktraces in development

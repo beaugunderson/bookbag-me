@@ -5,10 +5,25 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
-  <meta name="viewport" content="width=480" />
+  <meta name="viewport" content="" />
+
   <meta name="apple-mobile-web-app-capable" content="yes" />
 
-  <!-- <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/> -->
+  <script>
+   viewport = document.querySelector("meta[name=viewport]");
+
+   var iPhone = (navigator.userAgent.match(/(iPhone)/i) ? true : false);
+
+   if (iPhone == true) {
+     viewport.setAttribute('content', 'width=device-width, initial-scale=1,' +
+       ' maximum-scale=1, user-scalable=no,');
+   }
+
+   if (navigator.userAgent.match(/Android/i)) {
+     viewport.setAttribute('content', 'width=device-width; initial-scale=1;' +
+       ' maximum-scale=1; user-scalable=0;');
+   }
+  </script>
 
   <link rel="stylesheet" href="/css/bookbag-me.css" />
 

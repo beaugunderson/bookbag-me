@@ -8,6 +8,7 @@ body {
   padding: 1em;
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
+  font-size: 0.7em;
 }
 
 footer {
@@ -33,9 +34,18 @@ ul {
   padding: 0;
 
   li {
-    line-height: 1.5;
-    margin-bottom: 1.75em;
+    margin-bottom: 1.4em;
   }
+}
+
+li {
+  font-size: 1.6em;
+  line-height: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+#loading-bestsellers {
+  font-size: 1.6em;
 }
 
 .rating {
